@@ -7,6 +7,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('qr/', include('qr_generator.urls')),
+    path('', include('qr_generator.urls')),  # Include qr_generator app URLs
     # other app urls
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

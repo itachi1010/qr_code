@@ -4,6 +4,11 @@ import qrcode
 from PIL import Image
 from io import BytesIO
 
+# qr_generator/views.py
+from django.shortcuts import render
+
+
+
 def get_client_ip(request):
     """Utility function to get the client IP address from Django request object."""
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -43,3 +48,7 @@ def generate_qr(request):
         return response
     else:
         return render(request, 'qr_generator/generate_qr.html')
+
+
+def index(request):
+    return render(request, 'qr_generator/index.html')
