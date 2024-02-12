@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate QR Code</title>
+</head>
+<body>
+    <h2>Generate QR Code</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="content">Content:</label>
+        <input type="text" id="content" name="content" required><br><br>
+        <input type="submit" value="Generate">
+    </form>
+</body>
+</html>
